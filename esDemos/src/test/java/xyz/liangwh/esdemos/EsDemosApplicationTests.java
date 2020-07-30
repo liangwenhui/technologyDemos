@@ -5,14 +5,19 @@ import com.google.gson.JsonObject;
 import lombok.SneakyThrows;
 import org.elasticsearch.action.bulk.BulkRequestBuilder;
 import org.elasticsearch.action.bulk.BulkResponse;
+import org.elasticsearch.action.delete.DeleteResponse;
 import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.index.IndexRequestBuilder;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.action.search.SearchResponse;
+import org.elasticsearch.action.update.UpdateRequestBuilder;
+import org.elasticsearch.action.update.UpdateResponse;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.client.indices.CreateIndexResponse;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.xcontent.XContentFactory;
+import org.elasticsearch.index.query.MatchNoneQueryBuilder;
+import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.SearchHits;
 import org.junit.jupiter.api.Test;
@@ -38,7 +43,7 @@ class EsDemosApplicationTests {
     @SneakyThrows
     void createIndex(){
         IndexResponse response = transportClient
-                .prepareIndex("product2","_doc","1")
+                .prepareIndex("product2","_doc","10")
                 .setSource(XContentFactory.jsonBuilder().startObject()
                         .field("name","Honor MagicBook Pro")
                         .field("desc","一款轻便的笔记本")
@@ -100,8 +105,30 @@ class EsDemosApplicationTests {
             Map<String, Object> sourceAsMap = next.getSourceAsMap();
             System.out.println(sourceAsMap);
         }
+    }
+    @Test
+    @SneakyThrows
+    void _searchById(){
+        GetResponse getResponse = transportClient.prepareGet("product2","_doc","1").get();
+        System.out.println(getResponse);
+    }
+
+    @Test
+    @SneakyThrows
+    void updateById(){
+        UpdateResponse updateResponse = transportClient.prepareUpdate("product2", "_doc", "1").setDoc(XContentFactory.jsonBuilder().startObject().field("price", 6899).endObject()).get();
+        System.out.println(updateResponse);
 
     }
+
+    @Test
+    @SneakyThrows
+    void deleteById(){
+        DeleteResponse deleteResponse = transportClient.prepareDelete("product2", "_doc", "10").get();
+        System.out.println(deleteResponse);
+    }
+
+
 
 
 }
