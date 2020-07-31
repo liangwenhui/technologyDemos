@@ -16,10 +16,15 @@ import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.client.indices.CreateIndexResponse;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.xcontent.XContentFactory;
+import org.elasticsearch.index.query.MatchAllQueryBuilder;
 import org.elasticsearch.index.query.MatchNoneQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilder;
+import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.SearchHits;
+import org.elasticsearch.search.aggregations.Aggregation;
+import org.elasticsearch.search.aggregations.AggregationBuilders;
+import org.elasticsearch.search.aggregations.Aggregations;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -32,8 +37,7 @@ class EsDemosApplicationTests {
     @Autowired
     TransportClient transportClient;
 
-    @Autowired
-    RestHighLevelClient restHighLevelClient;
+
 
     //#############################  transportClient  #############################################
     /**
@@ -47,7 +51,7 @@ class EsDemosApplicationTests {
                 .setSource(XContentFactory.jsonBuilder().startObject()
                         .field("name","Honor MagicBook Pro")
                         .field("desc","一款轻便的笔记本")
-                        .field("price","5399")
+                        .field("price",5399)
                         .field("pulldate","2019-11-11")
                         .field("tags",new String[]{"AMD","AMD-R7","Honor","qingbian","性价比","办公","笔记本"})
                         .endObject()
@@ -66,7 +70,7 @@ class EsDemosApplicationTests {
                         .setSource(XContentFactory.jsonBuilder().startObject()
                                 .field("name","Honor MagicBook")
                                 .field("desc","一款轻便的笔记本")
-                                .field("price","3399")
+                                .field("price",3399)
                                 .field("pulldate","2019-11-11")
                                 .field("tags",new String[]{"AMD","AMD-R5","Honor","qingbian","性价比","办公","笔记本"})
                                 .endObject()))
@@ -74,7 +78,7 @@ class EsDemosApplicationTests {
                         .setSource(XContentFactory.jsonBuilder().startObject()
                                 .field("name","Huawei MateBook Pro")
                                 .field("desc","一款轻便的笔记本")
-                                .field("price","6999")
+                                .field("price",6999)
                                 .field("pulldate","2019-05-11")
                                 .field("tags",new String[]{"Inter","10900","HUAWEI","qingbian","高档","办公","笔记本"})
                                 .endObject()))
@@ -82,7 +86,7 @@ class EsDemosApplicationTests {
                         .setSource(XContentFactory.jsonBuilder().startObject()
                                 .field("name","LIANGXIANG X9700")
                                 .field("desc","一款高性能笔记本")
-                                .field("price","8888")
+                                .field("price",8888)
                                 .field("pulldate","2019-11-11")
                                 .field("tags",new String[]{"Inter","9700","LIANGXIANG","游戏","笔记本"})
                                 .endObject()))
@@ -128,7 +132,68 @@ class EsDemosApplicationTests {
         System.out.println(deleteResponse);
     }
 
+    @Test
+    @SneakyThrows
+    void query(){
+        MatchAllQueryBuilder matchAllQueryBuilder = QueryBuilders.matchAllQuery();
+        SearchResponse product2 = transportClient.prepareSearch("product2")
+                .setQuery(matchAllQueryBuilder).setSize(2).get();
+        SearchHits hits = product2.getHits();
+        for(SearchHit hit:hits){
+            System.out.println(hit.getSourceAsString());
+        }
+    }
 
+    /**
+     * query 查询 match匹配
+     */
+    @Test
+    @SneakyThrows
+    void queryMatch(){
+        SearchResponse searchResponse = transportClient.prepareSearch("product2")
+                .setQuery(QueryBuilders.matchQuery("tags", "R7")).get();
+        SearchHits hits = searchResponse.getHits();
+        for(SearchHit hit : hits){
+            System.out.println(hit.getSourceAsString());
+        }
+    }
+
+    @Test
+    @SneakyThrows
+    void queryTrem(){
+        SearchResponse searchResponse = transportClient.prepareSearch("product2")
+                .setQuery(QueryBuilders.termQuery("tags", "AMD-R7")).get();
+        SearchHits hits = searchResponse.getHits();
+        for(SearchHit hit : hits){
+            System.out.println(hit.getSourceAsString());
+        }
+    }
+
+    /**
+    聚合查询 aggs
+     {"size":0,
+     "aggs": {"group_by_price": {"range": {"field": "price",
+     "ranges": [{"from": 0,"to": 5000},{"from": 5001,"to": 8000},{"from": 8001,"to": 12000}]},
+     "aggs": {"product": {"terms": {"field": "name.keyword"}}}}} }
+     */
+    @Test
+    @SneakyThrows
+    void queryAggs(){
+        SearchResponse searchResponse = transportClient.prepareSearch("product2")
+                .addAggregation(
+                        AggregationBuilders.range("group_by_price")
+                                .field("price")
+                                .addRange(0, 5000)
+                                .addRange(5001, 8000)
+                                .addRange(8001, 12000)
+                                .subAggregation(AggregationBuilders.terms("product").field("name.keyword"))
+                ).setSize(0).execute().actionGet();
+
+        Aggregations aggregations = searchResponse.getAggregations();
+        Map<String, Aggregation> asMap = aggregations.getAsMap();
+        System.out.println(asMap);
+
+    }
 
 
 }
