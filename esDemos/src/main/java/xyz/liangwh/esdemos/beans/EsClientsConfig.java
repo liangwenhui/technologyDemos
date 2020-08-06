@@ -1,6 +1,7 @@
 package xyz.liangwh.esdemos.beans;
 
 import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpHost;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestClientBuilder;
@@ -15,7 +16,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PreDestroy;
 import java.net.InetAddress;
-
+@Slf4j
 @Component
 public class EsClientsConfig {
 
@@ -33,24 +34,24 @@ public class EsClientsConfig {
     @Bean(name = "transportClient")
     public TransportClient getTransportClient(){
         Settings settings =
-                    Settings.builder().put("cluster.name", "elasticsearch").build();
+                    Settings.builder().put("cluster.name", "liangwh-es-cluster").build();
         TransportClient client = new PreBuiltTransportClient(settings)
                                 //使用ES 通信端口
-                                .addTransportAddress(new TransportAddress(InetAddress.getByName("localhost"),9300));
-        System.out.println("BEAN TransportClient [transportClient] create success");
+                                .addTransportAddress(new TransportAddress(InetAddress.getByName("172.16.82.17"),9300))
+                                .addTransportAddress(new TransportAddress(InetAddress.getByName("172.16.82.18"),9300));
+
+        log.info("BEAN TransportClient [transportClient] create success");
         return client;
     }
 
     @SneakyThrows
     @Bean(name = "restHighLevelClient")
     public RestHighLevelClient getRestHighLevelClient(){
-        HttpHost[] hosts;
         //RestHighLevelClient 使用 ES server 端口
-        RestClientBuilder restClientBuilder = RestClient.builder(new HttpHost("localhost",9200,"http"));
+        RestClientBuilder restClientBuilder = RestClient.builder(new HttpHost("172.16.82.17",9200,"http"),new HttpHost("172.16.82.18",9200,"http"));
         RestHighLevelClient client = new RestHighLevelClient(restClientBuilder);
 
-        System.out.println("BEAN RestHighLevelClient [restHighLevelClient] create success");
-
+        log.info("BEAN RestHighLevelClient [restHighLevelClient] create success");
 
         return client;
     }
@@ -58,7 +59,7 @@ public class EsClientsConfig {
     @PreDestroy
     @SneakyThrows
     public void destroy(){
-        System.out.println("######################## DESTROY #############################");
+        log.info("######################## DESTROY #############################");
         if (transportClient!=null){
             transportClient.close();
         }
