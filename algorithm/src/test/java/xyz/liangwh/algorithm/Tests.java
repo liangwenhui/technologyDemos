@@ -1,91 +1,89 @@
 package xyz.liangwh.algorithm;
 
 
+import lombok.SneakyThrows;
 import org.junit.jupiter.api.Test;
 
 import javax.sound.midi.Soundbank;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Scanner;
+import java.util.Set;
 
 public class Tests {
 
+/**
+ *
+ * & 与  同为1才为1
+ * | 或  同为0才为0
+ * ^ 异或 相同为0，不同为1 X -> 异或运算就是不进位相加
+ * ~ 取反 0->1 ,1->0
+ * << 左移
+ * >> 右移
+ * >>> 无符号右移
+ *
+ */
+
+/**
+ * 不用额外变量，交互两个数的值
+ */
+@Test
+public void exChange(){
+    int a = 10;
+    int b=100;
+
+    a = a ^ b;
+    b = a ^ b ;
+    a = a ^ b ;
+
+    System.out.println("a = "+a);
+    System.out.println("b = "+b);
+
+
+}
+
+/**
+ * 有一个数组，有一个数字出现了偶数次，其他数字出现了奇数次，怎么找到奇数次的数字
+ */
+@Test
+public  void findJi(){
+    int[] arr = {1,1,1,1,1,1,2,2,3,3,3,3,4,4,4,4,4,4,4};
+    int tag = 0;
+    for(int item:arr){
+        tag = tag ^item;
+    }
+    System.out.println(tag);
+
+}
+
     /**
-     * 全正数随机数组
-     * Math.random() [0,1)
-     * Math.random() * N [0,N)
-     * (int)Math.random() * N [0,N-1]
-     * @param maxSize
-     * @param maxValue
-     * @return
-     */
-    public static int[] generateRandomArray(int maxSize,int maxValue){
-        int[] arr = new int[(int) (Math.random()*(maxSize)+1)];
-        for(int i=0;i<arr.length;i++){
-            arr[i] = (int) (Math.random()*(maxValue)+1);
-        }
-        return arr;
-    }
-
-    public static void main(String[] args) {
-        //System.out.println((29+3)/2);
-        //System.out.println(Arrays.toString(generateRandomArray(100,100)));
-    }
-
-
-    public static String intTo32BitBinary(int x) {
-        StringBuffer sb = new StringBuffer();
-        for (int i = 0; i < 32; i++) {
-            sb.append(x & 1);
-            //无符号右移，高位补0，包括符号位在内一起右移
-            //>> 是有符号右移。符号位保持不变，负数高位补1，正数高位补0。
-            x = x >>> 1;
-        }
-        //得到32位的二进制字符串
-        String str32 = sb.reverse().toString();
-        return str32;
-    }
-
-    @Test
-    public void youyi(){
-
-        int a = -123;
-        System.out.println(intTo32BitBinary(a));
-        a = a >> 2;
-        System.out.println(intTo32BitBinary(a));
-    }
-
-    /**
-     * 二分查找法
+     * 有一个数组，有两个数字出现了偶数次，其他数字出现了奇数次，怎么找到奇数次的数字
      */
     @Test
-    public void halfSearch(){
-        int tag = 114;
-        int[] nums = {1,23,34,45,52,64,75,86,91,101,114,125,138,145,158,163,177,182,196};
-        //开始下标
-        int start = 0;
-        //结束下标
-        int end = nums.length-1;
-        //中间下标
-        int index = 0;
-        //循环次数
-        int count=0;
-       // int [] here = null;
-        while(start<=end){
-            count++;
-            index = (start+end)/2;
-            if(nums[index]==tag){
-                break;
-            }else if(nums[index]>tag){
-                end = index-1;
-            }else {
-                start = index+1;
+    public  void findJi2(){
+        int[] arr = {1,1,1,1,1,1,2,2,2,3,3,3,4,4,4,4,4,4};
+        int tag = 0;
+        for(int item:arr){
+            tag = tag ^item;
+        }
+
+        //tag = a ^ b 两个不同的数字，异或一定不为0,必有一位是1
+        //找到最后一位1
+        int right =tag & (~tag+1);
+
+        int once = 0;
+        for(int item:arr){
+            if((item & right) != 0){
+                //tag 中 a和b分开
+                once = once ^ item;
             }
         }
-        if(tag==nums[index]){
-            System.out.println("数据tag="+tag+"在数据下标"+index+" 值["+nums[index]+"],循环了"+count+"次");
-        }else {
-            System.out.println(nums[index]);
-            System.out.println("找不到");
-        }
+
+        System.out.println((tag^once) + "  "+ once);
 
     }
+
+
 }
