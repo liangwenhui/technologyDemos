@@ -1,5 +1,14 @@
 package xyz.liangwh.algorithm.container;
 
+import lombok.SneakyThrows;
+import org.junit.jupiter.api.Test;
+import xyz.liangwh.algorithm.container.impl.MarkStack;
+import xyz.liangwh.algorithm.container.impl.QueueStack;
+import xyz.liangwh.algorithm.container.impl.RoundQueue;
+import xyz.liangwh.algorithm.container.impl.StackQueue;
+
+import java.util.Stack;
+
 /**
  * 栈  ： 先进后出  （子弹与弹夹）
  * 队列 ： 先进先出 （珠子与管道）
@@ -31,4 +40,92 @@ package xyz.liangwh.algorithm.container;
  *（2个队列，也是倒水一样，但是要倒剩下一个，给用户返回）
  */
 public class HelloStackAndQueue {
+
+    @Test
+    @SneakyThrows
+    void  testMyQueue(){
+        RoundQueue<String> killQueue = new RoundQueue<>(6);
+        killQueue.add("1");
+        killQueue.add("2");
+        killQueue.add("3");
+        System.out.println(killQueue.showElemnt());
+        System.out.println(killQueue.poll());
+        System.out.println(killQueue.showElemnt());
+        killQueue.add("4");
+        killQueue.add("5");
+        killQueue.add("6");
+        killQueue.add("7");
+        System.out.println(killQueue.poll());
+        System.out.println(killQueue.showElemnt());
+        killQueue.add("8");
+        System.out.println(killQueue.showElemnt());
+    }
+
+    @Test
+    @SneakyThrows
+    void testStack(){
+        MarkStack stack = new MarkStack();
+        stack.push(5);
+        stack.push(3);
+        stack.push(1);
+        stack.push(2);
+        stack.push(4);
+        stack.push(9);
+        System.out.println(stack.getMin());
+        System.out.println("pop:"+stack.pop());
+        System.out.println(stack.getMin());
+        System.out.println("pop:"+stack.pop());
+        System.out.println(stack.getMin());
+        System.out.println("pop:"+stack.pop());
+        System.out.println(stack.getMin());
+        System.out.println("pop:"+stack.pop());
+        System.out.println(stack.getMin());
+        System.out.println("pop:"+stack.pop());
+        System.out.println(stack.getMin());
+    }
+
+    @Test
+    @SneakyThrows
+    void testStackQueue(){
+        StackQueue queue = new StackQueue();
+        queue.put("l");
+        queue.put("i");
+        queue.put("a");
+        queue.put("n");
+        System.out.println(queue.pop());
+        System.out.println(queue.pop());
+        System.out.println(queue.pop());
+        System.out.println(queue.pop());
+        queue.put("g");
+        queue.put("w");
+        queue.put("h");
+        System.out.println(queue.pop());
+        System.out.println(queue.pop());
+        System.out.println(queue.pop());
+    }
+
+    @SneakyThrows
+    @Test
+    void testQueueStack(){
+        QueueStack stack = new QueueStack();
+        stack.pust(1);
+        stack.pust(2);
+        stack.pust(3);
+        stack.pust(4);
+        stack.pust(5);
+        System.out.println(stack.peek());
+        System.out.println(stack.poll());
+        System.out.println(stack.poll());
+        stack.pust(6);
+        stack.pust(7);
+        System.out.println(stack.poll());
+        System.out.println(stack.poll());
+        System.out.println(stack.poll());
+        System.out.println(stack.poll());
+        System.out.println(stack.poll());
+        //5 5 4 7 6 3 2 1
+
+    }
+
+
 }
