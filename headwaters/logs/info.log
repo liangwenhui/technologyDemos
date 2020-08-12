@@ -1,0 +1,13 @@
+BEATS-2020-08-12 15:02:19.426 [main] INFO  xyz.liangwh.headwaters.HeadwatersApplication - Starting HeadwatersApplication on LAPTOP-VGLK8K0J with PID 15516 (D:\LearnProject\technologyDemos\headwaters\target\classes started by liangwh in D:\LearnProject\technologyDemos\headwaters)
+BEATS-2020-08-12 15:02:19.430 [main] INFO  xyz.liangwh.headwaters.HeadwatersApplication - The following profiles are active: prod
+BEATS-2020-08-12 15:02:20.290 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+BEATS-2020-08-12 15:02:20.299 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+BEATS-2020-08-12 15:02:20.300 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+BEATS-2020-08-12 15:02:20.301 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+BEATS-2020-08-12 15:02:20.387 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+BEATS-2020-08-12 15:02:20.387 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 901 ms
+BEATS-2020-08-12 15:02:20.544 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+BEATS-2020-08-12 15:02:20.706 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+BEATS-2020-08-12 15:02:20.726 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+BEATS-2020-08-12 15:02:20.736 [main] INFO  xyz.liangwh.headwaters.HeadwatersApplication - Started HeadwatersApplication in 1.919 seconds (JVM running for 3.158)
+BEATS-2020-08-12 15:02:20.738 [main] INFO  xyz.liangwh.headwaters.HeadwatersApplication - ############################启动成功#########################
