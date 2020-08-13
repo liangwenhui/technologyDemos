@@ -7,8 +7,10 @@ import org.junit.jupiter.api.Test;
 import javax.sound.midi.Soundbank;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -82,6 +84,31 @@ public  void findJi(){
         }
 
         System.out.println((tag^once) + "  "+ once);
+
+    }
+
+    @SneakyThrows
+    @Test
+    void testoe(){
+        int[] c = {2,2};
+        int[] e= {2,4};
+        System.out.println(outputExpress(c,e));
+    }
+
+    @SneakyThrows
+    private Map outputExpress(int[] c ,int[] e){
+        if(e==null){throw new Exception();}
+        StringBuffer exp = new StringBuffer();
+        long res = 0;
+        for(int i=0;i<e.length;i++){
+            exp.append(c[i]).append("x").append(e[i]);
+            exp.append("+");
+            res += c[i]*e[i];
+        }
+        exp.delete(exp.length()-1,exp.length());
+        Map map = new HashMap();
+        map.put(exp.toString(),res);
+        return map;
 
     }
 

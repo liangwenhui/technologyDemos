@@ -2,5 +2,34 @@ logging:
   config: classpath:logback-spring.xml
 
 spring:
-  profiles:
-    active: prod
+#  profiles:
+#    active: prod
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://lwh1618.com:3306/demos?autoReconnect=true&useUnicode=true&noAccessToProcedureBodies=true&characterEncoding=utf8&useSLL=true
+    username: root
+    password: lwh@13660161032
+    hikari:
+      minimum-idle: 5
+      idle-timeout: 1800000
+      maximum-pool-size: 10
+      auto-commit: true
+      pool-name: LwhHikarCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: select 1
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+    #log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  #mapper-locations: classpath*:mapper/**/*Mapper.xml
+  global-config:
+    # 逻辑删除配置
+    db-config:
+      # 删除前
+      logic-not-delete-value: 1
+      # 删除后
+      logic-delete-value: 0
