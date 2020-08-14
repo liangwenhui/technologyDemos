@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import xyz.liangwh.headwaters.core.HeadwatersImpl;
+import xyz.liangwh.headwaters.core.interfaces.IDGenerator;
 import xyz.liangwh.headwaters.core.model.Result;
 
 @RestController
@@ -13,11 +14,11 @@ import xyz.liangwh.headwaters.core.model.Result;
 public class HwIDGenController {
 
     @Autowired
-    private HeadwatersImpl service;
+    private IDGenerator generator;
 
     @GetMapping("/api/bucket/v1/{key}")
     public Result getId(@PathVariable("key") String key){
-        Result res = service.getId(key);
+        Result res = generator.getId(key);
         return res;
     }
 
