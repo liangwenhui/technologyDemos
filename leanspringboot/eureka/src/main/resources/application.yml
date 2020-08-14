@@ -28,6 +28,15 @@ eureka:
 ---
 server:
   port: 8001
+
+#eureka 安全连接配置鉴权账号密码
+#spring:
+#  security:
+#    user:
+#      name:
+#      password:
+
+
 eureka:
   instance:
     status-page-url-path: /info
