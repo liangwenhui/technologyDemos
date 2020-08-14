@@ -53,3 +53,5 @@ eureka:
   server:
     #取消保护机制，便于测试
     enable-self-preservation: false
+    #失效服务间隔时间
+    eviction-interval-timer-in-ms: 3000
