@@ -10,3 +10,16 @@ eureka:
 spring:
   application:
     name: EUREKA-CLIENT-1
+
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        #开启所有节点
+        include: "*"
+  endpoint:
+    #远程下线
+    shutdown:
+      enabled: true

@@ -35,6 +35,7 @@ eureka:
     hostname: eureka1
     metadata-map:
       zone: zone1
+
   client:
     #是否开启eureka
     enabled: true
@@ -49,3 +50,6 @@ eureka:
     healthcheck:
       enabled: true
     prefer-same-zone-eureka: true
+  server:
+    #取消保护机制，便于测试
+    enable-self-preservation: false
