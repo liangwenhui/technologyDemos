@@ -57,7 +57,7 @@ public interface HwMarkMapper  {
      *     max_id = (id<<32) | (inside_id)
      * where busi_key = 'one'
      */
-    @Update("UPDATE hw_mark SET inside_id = inside_id+#{step},max_id=(id<<32)|inside_id WHERE busi_key = #{key}")
+    @Update("UPDATE hw_mark SET step = #{step},inside_id = inside_id+#{step},max_id=(id<<32)|inside_id WHERE busi_key = #{key}")
     void updateByKeyAndAutoStep(String key,int step);
 
 

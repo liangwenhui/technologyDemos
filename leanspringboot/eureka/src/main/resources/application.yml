@@ -1,0 +1,51 @@
+
+---
+server:
+  port: 8001
+spring:
+  application:
+    name: eureka1
+  profiles: 8001
+eureka:
+  client:
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8001/eureka/,http://127.0.0.1:8002/eureka/
+---
+
+server:
+  port: 8002
+spring:
+  application:
+    name: eureka2
+  profiles: 8002
+eureka:
+  client:
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8001/eureka/,http://127.0.0.1:8002/eureka/
+
+---
+server:
+  port: 8001
+eureka:
+  instance:
+    status-page-url-path: /info
+    health-check-url-path: /health
+    hostname: eureka1
+    metadata-map:
+      zone: zone1
+  client:
+    #是否开启eureka
+    enabled: true
+    #是否注册到eureka server，默认true，eureka自生不需要注册到eureka，所以设置false
+    register-with-eureka: false
+    #是否拉取服务列表，单机环境不需要
+    fetch-registry: false
+    #注册中心节点url
+      # http://locahost:${server.port}/eureka/
+    service-url:
+      defaultZone: http://localhost:${server.port}/eureka/
+    healthcheck:
+      enabled: true
+    prefer-same-zone-eureka: true
