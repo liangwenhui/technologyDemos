@@ -3,7 +3,7 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8001/eureka/
+      defaultZone: http://admin:admin@localhost:8001/eureka/
     #间隔到eureka拉去服务列表，默认30s，如果想要快速获取服务，建议设置少一些
     registry-fetch-interval-seconds: 10
   instance:
@@ -29,3 +29,19 @@ management:
     #远程下线
     shutdown:
       enabled: true
+
+---
+lwh:
+  data: 1
+spring:
+  profiles: 8100
+server:
+  port: 8100
+---
+lwh:
+  data: 2
+spring:
+  profiles: 8101
+server:
+  port: 8101
+---

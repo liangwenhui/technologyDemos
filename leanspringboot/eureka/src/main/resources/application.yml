@@ -30,11 +30,11 @@ server:
   port: 8001
 
 #eureka 安全连接配置鉴权账号密码
-#spring:
-#  security:
-#    user:
-#      name:
-#      password:
+spring:
+  security:
+    user:
+      name: admin
+      password: admin
 
 
 eureka:
@@ -55,7 +55,7 @@ eureka:
     #注册中心节点url
       # http://locahost:${server.port}/eureka/
     service-url:
-      defaultZone: http://localhost:${server.port}/eureka/
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:${server.port}/eureka/
     healthcheck:
       enabled: true
     prefer-same-zone-eureka: true
