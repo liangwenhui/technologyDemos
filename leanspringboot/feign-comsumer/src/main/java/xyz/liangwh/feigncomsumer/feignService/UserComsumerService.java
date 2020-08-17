@@ -10,7 +10,7 @@ import xyz.liangwh.feigncomsumer.config.FeignBaseAuthConfig;
 import java.util.Collections;
 import java.util.Map;
 
-@FeignClient(name="provider",configuration = FeignBaseAuthConfig.class)
+@FeignClient(name="provider",configuration = FeignBaseAuthConfig.class,fallback = FallBackService.class)
 public interface UserComsumerService extends UserService {
 
     /**

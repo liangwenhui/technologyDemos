@@ -1,5 +1,6 @@
 package xyz.liangwh.feigncomsumer.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,10 +18,14 @@ public class UserController {
     private UserComsumerService service;
 
     @RequestMapping("get")
+    @HystrixCommand(fallbackMethod = "back")
     public String getUserName(){
       return  service.getUsername();
     }
 
+    public  String  back(){
+        return "back 1";
+    }
 
     @GetMapping("gm1")
     public Map getMap1(){
