@@ -1,0 +1,21 @@
+
+server:
+  port: 9001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@localhost:8001/eureka/
+    #间隔到eureka拉去服务列表，默认30s，如果想要快速获取服务，建议设置少一些
+    registry-fetch-interval-seconds: 10
+  #  enabled: false
+
+  instance:
+    prefer-ip-address: true
+    instanceId: ${spring.cloud.client.ip-address}:${server.port}  #注册实例ID生成规则
+    #续约发送间隔，默认30s
+    lease-renewal-interval-in-seconds: 30
+    #续约持续时间，默认90s
+    lease-expiration-duration-in-seconds: 60
+spring:
+  application:
+    name: comsumer
