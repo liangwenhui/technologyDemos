@@ -19,3 +19,31 @@ eureka:
 spring:
   application:
     name: comsumer
+
+
+#使用 RequestInterceptor 和 FeignClient的configuration 效果一样。取其中一种即可,默认配置文件的RequestInterceptor优先级高
+feign:
+  #客户端配置压缩
+  compression:
+    request:
+      enabled: true
+      #达到2048b 压缩
+      min-request-size: 2048
+    response:
+      enabled: true
+
+  client:
+    config:
+      #指定服务配置
+      provider:
+        request-interceptors: xyz.liangwh.feigncomsumer.config.MyBasicAuthRequestInterceptor
+        connect-timeout: 5000
+        read-timeout: 5000
+        logger-level: full
+      #通用服务配置
+      default:
+        connect-timeout: 5000
+        read-timeout: 5000
+        logger-level: full
+    #属性配置比Java代码优先级高。也可通过配置设置java代码优先级高
+    default-to-properties: false

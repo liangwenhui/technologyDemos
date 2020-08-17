@@ -5,11 +5,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import xyz.liangwh.feignapi.service.UserService;
+import xyz.liangwh.feigncomsumer.config.FeignBaseAuthConfig;
 
 import java.util.Collections;
 import java.util.Map;
 
-@FeignClient(name="provider")
+@FeignClient(name="provider",configuration = FeignBaseAuthConfig.class)
 public interface UserComsumerService extends UserService {
 
     /**

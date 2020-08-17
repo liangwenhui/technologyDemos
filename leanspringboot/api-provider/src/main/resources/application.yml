@@ -1,6 +1,9 @@
 
 server:
   port: 9002
+  #服务端开启压缩
+  compression:
+    enabled: true
 eureka:
   client:
     service-url:
@@ -19,3 +22,8 @@ eureka:
 spring:
   application:
     name: provider
+  security:
+    user:
+      name: lwh
+      password: lwh1618
+
