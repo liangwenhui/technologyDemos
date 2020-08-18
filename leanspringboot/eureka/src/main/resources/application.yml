@@ -31,12 +31,17 @@ server:
 
 #eureka 安全连接配置鉴权账号密码
 spring:
-  security:
-    user:
-      name: admin
-      password: admin
-
-
+#  security:
+#    user:
+#      name: admin
+#      password: admin
+      #admin上报地址
+  boot:
+    admin:
+      client:
+        url: http://localhost:8080
+  application:
+    name: EUREKA-1
 eureka:
   instance:
     status-page-url-path: /info
@@ -55,7 +60,7 @@ eureka:
     #注册中心节点url
       # http://locahost:${server.port}/eureka/
     service-url:
-      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:${server.port}/eureka/
+      defaultZone: http://localhost:${server.port}/eureka/
     healthcheck:
       enabled: true
     prefer-same-zone-eureka: true
@@ -64,3 +69,12 @@ eureka:
     enable-self-preservation: false
     #失效服务间隔时间
     eviction-interval-timer-in-ms: 3000
+#admin 健康监控配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

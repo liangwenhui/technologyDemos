@@ -6,7 +6,7 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://admin:admin@localhost:8001/eureka/
+      defaultZone: http://localhost:8001/eureka/
     #间隔到eureka拉去服务列表，默认30s，如果想要快速获取服务，建议设置少一些
     registry-fetch-interval-seconds: 10
   #  enabled: false
