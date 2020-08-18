@@ -21,18 +21,24 @@ eureka:
 spring:
   application:
     name: comsumer
+  zipkin:
+    base-url: http://localhost:9411
+    #采样比例
+  sleuth:
+    sampler:
+      rate: 1
 ######################################################################################
 #######################FEIGN#########################################################
 #使用 RequestInterceptor 和 FeignClient的configuration 效果一样。取其中一种即可,默认配置文件的RequestInterceptor优先级高
 feign:
   #客户端配置压缩
-  compression:
-    request:
-      enabled: true
-      #达到2048b 压缩
-      min-request-size: 2048
-    response:
-      enabled: true
+#  compression:
+#    request:
+#      enabled: true
+#      #达到2048b 压缩
+#      min-request-size: 2048
+#    response:
+#      enabled: true
 
   client:
     config:
@@ -62,17 +68,17 @@ feign:
 #超时
 ribbon:
   #连接超时时间(ms)
-  ConnectTimeout: 1000
+  ConnectTimeout: 30000
   #业务逻辑超时时间(ms)
-  ReadTimeout: 6000
+  ReadTimeout: 30000
 
 #重试
 #同一台实例最大重试次数,不包括首次调用
-  MaxAutoRetries: 1
-  #重试负载均衡其他的实例最大重试次数,不包括首次调用
-  MaxAutoRetriesNextServer: 1
-  #是否所有操作都重试
-  OkToRetryOnAllOperations: false
+#  MaxAutoRetries: 1
+#  #重试负载均衡其他的实例最大重试次数,不包括首次调用
+#  MaxAutoRetriesNextServer: 1
+#  #是否所有操作都重试
+#  OkToRetryOnAllOperations: false
 
 
 ######################################################################################

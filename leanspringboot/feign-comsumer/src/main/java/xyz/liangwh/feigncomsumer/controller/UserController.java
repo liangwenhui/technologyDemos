@@ -29,7 +29,8 @@ public class UserController {
 
     @GetMapping("gm1")
     public Map getMap1(){
-        return service.getMap1();
+        Map map = service.getMap1();
+        return map;
     }
 
     @GetMapping("gm2")
