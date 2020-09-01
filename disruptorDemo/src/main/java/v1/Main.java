@@ -1,6 +1,7 @@
 package v1;
 
 import com.lmax.disruptor.AlertException;
+import com.lmax.disruptor.BlockingWaitStrategy;
 import com.lmax.disruptor.RingBuffer;
 import com.lmax.disruptor.TimeoutException;
 import com.lmax.disruptor.WaitStrategy;
@@ -30,11 +31,11 @@ public class Main {
                 new Disruptor<LongEvent>(
                         new LongEventFactory(),
                         bufferSize,
-                        new LwhThreadFactory()
+                        new LwhThreadFactory(),
+                        ProducerType.MULTI,
+                        new BlockingWaitStrategy()
                 );
-        disruptor.handleEventsWith(new LongEventHandler());
-        disruptor.handleEventsWith(new LongEventHandler());
-        disruptor.handleEventsWith(new LongEventHandler());
+        disruptor.handleEventsWith(new LongEventHandler(),new LongEventHandler());
         //disruptor.handleEventsWithWorkerPool(new LongEventWorkHandle());
         disruptor.start();
 
