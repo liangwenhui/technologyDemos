@@ -14,7 +14,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>leanspringboot</name>
     <description>Demo project for Spring Boot</description>
-
+    <packaging>pom</packaging>
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>Hoxton.SR7</spring-cloud.version>
@@ -23,6 +23,10 @@
    <modules>
        <module>eureka</module>
        <module>eurekaservice</module>
+       <module>feign-api</module>
+       <module>feign-comsumer</module>
+       <module>api-provider</module>
+       <module>admin-service</module>
    </modules>
 
     <dependencies>
@@ -47,7 +51,11 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+
+
     </dependencies>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -56,6 +64,11 @@
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.3.3.RELEASE</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
