@@ -46,6 +46,10 @@ public class LwhBeanFactoryPostProcessor implements BeanDefinitionRegistryPostPr
             propertyValues.addPropertyValue("job","wife");
         }
 
+
+
+
+
 //        Map<String, AppBeans> beansOfType = configurableListableBeanFactory.getBeansOfType(AppBeans.class);
 //        Set<String> strings = beansOfType.keySet();
 //        for(String beanNames:strings){

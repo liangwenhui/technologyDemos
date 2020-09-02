@@ -22,7 +22,10 @@ public class LwhApplicationAware implements ApplicationContextAware {
         LwhApplicationAware.CONTEXT = applicationContext;
 
     }
+    public static ApplicationContext getApplicationContext() throws BeansException {
+       return CONTEXT;
 
+    }
     public static Object getBeanByName(String name){
         return CONTEXT.getBean(name);
     }

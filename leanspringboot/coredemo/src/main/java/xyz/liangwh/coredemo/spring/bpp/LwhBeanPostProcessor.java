@@ -15,6 +15,7 @@ public class LwhBeanPostProcessor implements BeanPostProcessor {
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         if (beanName.equals("soutBeanNames"))
             System.out.println("LwhBeanPostProcessor postProcessBeforeInitialization");
+
         return bean;
     }
 
