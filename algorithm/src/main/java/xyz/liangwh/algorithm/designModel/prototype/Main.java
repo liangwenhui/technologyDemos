@@ -14,8 +14,10 @@ Main {
         System.out.println(s2);
         System.out.println(s1==s2);
         System.out.println(s1.equals(s2));
-
-
+        String formatSql = "SELECT %s.nextval as nextval";
+        String sql = String.format(formatSql, new Object[] { "asd_sad".toUpperCase() });
+        System.out.println(sql);
+        Long.parseLong("null");
     }
 }
 

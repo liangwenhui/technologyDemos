@@ -49,7 +49,7 @@ public class ProvideController {
     @PostMapping("location")
     public Persion location(@RequestBody Persion persion, HttpServletResponse response) throws URISyntaxException {
         String kw = persion.getName();
-
+        System.out.println();
         URI uri = new URI("https://www.baidu.com?wd="+kw);
         response.setHeader("Location",uri.toString());
         return persion;

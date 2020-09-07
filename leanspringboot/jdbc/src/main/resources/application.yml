@@ -1,0 +1,24 @@
+
+spring:
+#  profiles:
+#    active: prod
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://172.16.83.195:13307/oss3_portal?useSSL=true
+#    url: jdbc:mysql://172.16.83.195:13307/oss3_portal?autoReconnect=true&useUnicode=true&noAccessToProcedureBodies=true&characterEncoding=utf8
+#    username: oss_dc
+#    password: Oss2020@123
+    url: jdbc:mysql://133.64.170.4:9803/OSS_SO
+    username: so_sc
+    password: 'Kj01!^ODpmS7'
+#    hikari:
+#      minimum-idle: 5
+#      idle-timeout: 1800000
+#      maximum-pool-size: 10
+#      auto-commit: true
+#      pool-name: LwhHikarCP
+#      max-lifetime: 1800000
+#      connection-timeout: 30000
+#      connection-test-query: select 1
+  #freemarker
+

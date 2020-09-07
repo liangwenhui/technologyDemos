@@ -1,0 +1,110 @@
+BEATS-2020-08-05 10:20:40.749 [main] INFO  xyz.liangwh.esdemos.EsDemosApplication - Starting EsDemosApplication on LAPTOP-VGLK8K0J with PID 1580 (D:\LearnProject\technologyDemos\esDemos\target\classes started by liangwh in D:\LearnProject\technologyDemos\esDemos)
+BEATS-2020-08-05 10:20:40.752 [main] INFO  xyz.liangwh.esdemos.EsDemosApplication - The following profiles are active: prod
+BEATS-2020-08-05 10:20:41.774 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+BEATS-2020-08-05 10:20:41.787 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+BEATS-2020-08-05 10:20:41.788 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+BEATS-2020-08-05 10:20:41.789 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+BEATS-2020-08-05 10:20:41.850 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+BEATS-2020-08-05 10:20:41.850 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1053 ms
+BEATS-2020-08-05 10:20:42.667 [main] INFO  org.elasticsearch.plugins.PluginsService - no modules loaded
+BEATS-2020-08-05 10:20:42.668 [main] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.index.reindex.ReindexPlugin]
+BEATS-2020-08-05 10:20:42.668 [main] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.join.ParentJoinPlugin]
+BEATS-2020-08-05 10:20:42.668 [main] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.percolator.PercolatorPlugin]
+BEATS-2020-08-05 10:20:42.668 [main] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.script.mustache.MustachePlugin]
+BEATS-2020-08-05 10:20:42.668 [main] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.transport.Netty4Plugin]
+BEATS-2020-08-05 10:20:48.269 [main] INFO  xyz.liangwh.esdemos.beans.EsClientsConfig - BEAN TransportClient [transportClient] create success
+BEATS-2020-08-05 10:20:49.045 [main] INFO  xyz.liangwh.esdemos.beans.EsClientsConfig - BEAN RestHighLevelClient [restHighLevelClient] create success
+BEATS-2020-08-05 10:20:49.172 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+BEATS-2020-08-05 10:20:49.349 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+BEATS-2020-08-05 10:20:49.363 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+BEATS-2020-08-05 10:20:49.375 [main] INFO  xyz.liangwh.esdemos.EsDemosApplication - Started EsDemosApplication in 9.183 seconds (JVM running for 10.362)
+BEATS-2020-08-05 10:20:49.378 [main] INFO  xyz.liangwh.esdemos.EsDemosApplication - ############################启动成功#########################
+BEATS-2020-08-05 10:22:55.343 [main] INFO  xyz.liangwh.esdemos.EsDemosApplication - Starting EsDemosApplication on LAPTOP-VGLK8K0J with PID 8180 (D:\LearnProject\technologyDemos\esDemos\target\classes started by liangwh in D:\LearnProject\technologyDemos\esDemos)
+BEATS-2020-08-05 10:22:55.346 [main] INFO  xyz.liangwh.esdemos.EsDemosApplication - The following profiles are active: prod
+BEATS-2020-08-05 10:22:56.169 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+BEATS-2020-08-05 10:22:56.179 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+BEATS-2020-08-05 10:22:56.179 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+BEATS-2020-08-05 10:22:56.179 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+BEATS-2020-08-05 10:22:56.232 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+BEATS-2020-08-05 10:22:56.232 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 828 ms
+BEATS-2020-08-05 10:22:56.979 [main] INFO  org.elasticsearch.plugins.PluginsService - no modules loaded
+BEATS-2020-08-05 10:22:56.980 [main] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.index.reindex.ReindexPlugin]
+BEATS-2020-08-05 10:22:56.980 [main] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.join.ParentJoinPlugin]
+BEATS-2020-08-05 10:22:56.980 [main] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.percolator.PercolatorPlugin]
+BEATS-2020-08-05 10:22:56.980 [main] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.script.mustache.MustachePlugin]
+BEATS-2020-08-05 10:22:56.981 [main] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.transport.Netty4Plugin]
+BEATS-2020-08-05 10:23:00.507 [main] INFO  xyz.liangwh.esdemos.beans.EsClientsConfig - BEAN TransportClient [transportClient] create success
+BEATS-2020-08-05 10:23:01.411 [main] INFO  xyz.liangwh.esdemos.beans.EsClientsConfig - BEAN RestHighLevelClient [restHighLevelClient] create success
+BEATS-2020-08-05 10:23:01.571 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+BEATS-2020-08-05 10:23:01.772 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+BEATS-2020-08-05 10:23:01.788 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+BEATS-2020-08-05 10:23:01.801 [main] INFO  xyz.liangwh.esdemos.EsDemosApplication - Started EsDemosApplication in 7.028 seconds (JVM running for 8.236)
+BEATS-2020-08-05 10:23:01.804 [main] INFO  xyz.liangwh.esdemos.EsDemosApplication - ############################启动成功#########################
+BEATS-2020-08-05 10:26:33.376 [main] INFO  xyz.liangwh.esdemos.EsDemosApplication - Starting EsDemosApplication on LAPTOP-VGLK8K0J with PID 7256 (D:\LearnProject\technologyDemos\esDemos\target\classes started by liangwh in D:\LearnProject\technologyDemos\esDemos)
+BEATS-2020-08-05 10:26:33.380 [main] INFO  xyz.liangwh.esdemos.EsDemosApplication - The following profiles are active: prod
+BEATS-2020-08-05 10:26:34.177 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+BEATS-2020-08-05 10:26:34.186 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+BEATS-2020-08-05 10:26:34.187 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+BEATS-2020-08-05 10:26:34.187 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+BEATS-2020-08-05 10:26:34.238 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+BEATS-2020-08-05 10:26:34.238 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 812 ms
+BEATS-2020-08-05 10:26:34.947 [main] INFO  org.elasticsearch.plugins.PluginsService - no modules loaded
+BEATS-2020-08-05 10:26:34.948 [main] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.index.reindex.ReindexPlugin]
+BEATS-2020-08-05 10:26:34.949 [main] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.join.ParentJoinPlugin]
+BEATS-2020-08-05 10:26:34.949 [main] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.percolator.PercolatorPlugin]
+BEATS-2020-08-05 10:26:34.949 [main] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.script.mustache.MustachePlugin]
+BEATS-2020-08-05 10:26:34.949 [main] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.transport.Netty4Plugin]
+BEATS-2020-08-05 10:26:38.399 [main] INFO  xyz.liangwh.esdemos.beans.EsClientsConfig - BEAN TransportClient [transportClient] create success
+BEATS-2020-08-05 10:26:39.209 [main] INFO  xyz.liangwh.esdemos.beans.EsClientsConfig - BEAN RestHighLevelClient [restHighLevelClient] create success
+BEATS-2020-08-05 10:26:39.341 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+BEATS-2020-08-05 10:26:39.526 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+BEATS-2020-08-05 10:26:39.538 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+BEATS-2020-08-05 10:26:39.547 [main] INFO  xyz.liangwh.esdemos.EsDemosApplication - Started EsDemosApplication in 6.723 seconds (JVM running for 7.905)
+BEATS-2020-08-05 10:26:39.550 [main] INFO  xyz.liangwh.esdemos.EsDemosApplication - ############################启动成功#########################
+BEATS-2020-08-05 10:28:44.809 [main] INFO  xyz.liangwh.esdemos.EsDemosApplication - Starting EsDemosApplication on LAPTOP-VGLK8K0J with PID 248 (D:\LearnProject\technologyDemos\esDemos\target\classes started by liangwh in D:\LearnProject\technologyDemos\esDemos)
+BEATS-2020-08-05 10:28:44.812 [main] INFO  xyz.liangwh.esdemos.EsDemosApplication - The following profiles are active: prod
+BEATS-2020-08-05 10:28:45.624 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+BEATS-2020-08-05 10:28:45.633 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+BEATS-2020-08-05 10:28:45.633 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+BEATS-2020-08-05 10:28:45.634 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+BEATS-2020-08-05 10:28:45.683 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+BEATS-2020-08-05 10:28:45.683 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 821 ms
+BEATS-2020-08-05 10:28:46.398 [main] INFO  org.elasticsearch.plugins.PluginsService - no modules loaded
+BEATS-2020-08-05 10:28:46.399 [main] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.index.reindex.ReindexPlugin]
+BEATS-2020-08-05 10:28:46.399 [main] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.join.ParentJoinPlugin]
+BEATS-2020-08-05 10:28:46.399 [main] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.percolator.PercolatorPlugin]
+BEATS-2020-08-05 10:28:46.399 [main] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.script.mustache.MustachePlugin]
+BEATS-2020-08-05 10:28:46.399 [main] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.transport.Netty4Plugin]
+BEATS-2020-08-05 10:28:50.209 [main] INFO  xyz.liangwh.esdemos.beans.EsClientsConfig - BEAN TransportClient [transportClient] create success
+BEATS-2020-08-05 10:28:51.036 [main] INFO  xyz.liangwh.esdemos.beans.EsClientsConfig - BEAN RestHighLevelClient [restHighLevelClient] create success
+BEATS-2020-08-05 10:28:51.168 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+BEATS-2020-08-05 10:28:51.336 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+BEATS-2020-08-05 10:28:51.350 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+BEATS-2020-08-05 10:28:51.360 [main] INFO  xyz.liangwh.esdemos.EsDemosApplication - Started EsDemosApplication in 7.097 seconds (JVM running for 8.283)
+BEATS-2020-08-05 10:28:51.363 [main] INFO  xyz.liangwh.esdemos.EsDemosApplication - ############################启动成功#########################
+BEATS-2020-08-05 10:36:21.406 [main] INFO  xyz.liangwh.esdemos.EsDemosApplication - Starting EsDemosApplication on LAPTOP-VGLK8K0J with PID 11292 (D:\LearnProject\technologyDemos\esDemos\target\classes started by liangwh in D:\LearnProject\technologyDemos\esDemos)
+BEATS-2020-08-05 10:36:21.409 [main] INFO  xyz.liangwh.esdemos.EsDemosApplication - The following profiles are active: prod
+BEATS-2020-08-05 10:36:22.253 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+BEATS-2020-08-05 10:36:22.261 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+BEATS-2020-08-05 10:36:22.262 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+BEATS-2020-08-05 10:36:22.262 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+BEATS-2020-08-05 10:36:22.315 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+BEATS-2020-08-05 10:36:22.316 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 866 ms
+BEATS-2020-08-05 10:36:23.070 [main] INFO  org.elasticsearch.plugins.PluginsService - no modules loaded
+BEATS-2020-08-05 10:36:23.071 [main] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.index.reindex.ReindexPlugin]
+BEATS-2020-08-05 10:36:23.071 [main] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.join.ParentJoinPlugin]
+BEATS-2020-08-05 10:36:23.071 [main] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.percolator.PercolatorPlugin]
+BEATS-2020-08-05 10:36:23.071 [main] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.script.mustache.MustachePlugin]
+BEATS-2020-08-05 10:36:23.071 [main] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.transport.Netty4Plugin]
+BEATS-2020-08-05 10:36:27.000 [main] INFO  xyz.liangwh.esdemos.beans.EsClientsConfig - BEAN TransportClient [transportClient] create success
+BEATS-2020-08-05 10:36:27.933 [main] INFO  xyz.liangwh.esdemos.beans.EsClientsConfig - BEAN RestHighLevelClient [restHighLevelClient] create success
+BEATS-2020-08-05 10:36:28.077 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+BEATS-2020-08-05 10:36:28.263 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+BEATS-2020-08-05 10:36:28.278 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+BEATS-2020-08-05 10:36:28.289 [main] INFO  xyz.liangwh.esdemos.EsDemosApplication - Started EsDemosApplication in 7.464 seconds (JVM running for 8.687)
+BEATS-2020-08-05 10:36:28.292 [main] INFO  xyz.liangwh.esdemos.EsDemosApplication - ############################启动成功#########################
+BEATS-2020-08-05 10:37:13.775 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+BEATS-2020-08-05 10:37:13.775 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+BEATS-2020-08-05 10:37:13.781 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+BEATS-2020-08-05 10:37:13.812 [http-nio-8080-exec-2] INFO  x.liangwh.esdemos.busi.controller.HelloController - hello liwh!
+I am ROoOt ,I got you message :[i o u]
