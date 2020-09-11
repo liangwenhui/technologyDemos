@@ -27,6 +27,7 @@
        <module>feign-comsumer</module>
        <module>api-provider</module>
        <module>admin-service</module>
+       <module>jdbc</module>
    </modules>
 
     <dependencies>
