@@ -3,6 +3,7 @@ package xyz.liangwh.io;
 import lombok.SneakyThrows;
 import org.junit.Test;
 
+import javax.management.MXBean;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -10,10 +11,11 @@ import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
+import java.util.Random;
 
 public class FileIO {
 
-    private String fileName = "E:\\fileid.txt";
+    private String fileName = "D:\\fileid.txt";
     private String data = "12345678\n";
 
     /**
@@ -131,4 +133,14 @@ public class FileIO {
         System.out.println("mark: " + buffer);
 
     }
+    @Test
+    public void t(){
+        System.out.println(Math.random()*10);
+        System.out.println(Math.round(Math.random()*10));
+
+    }
+
+
+
+
 }

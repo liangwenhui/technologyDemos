@@ -6,12 +6,20 @@ import org.springframework.transaction.annotation.Transactional;
 import xyz.liangwh.headwaters.core.model.HeadwatersPo;
 import xyz.liangwh.headwaters.core.model.HwMarkSamplePo;
 
+import javax.annotation.Resource;
 import java.util.List;
 @Component
 public class HwMarkDao {
 
     @Autowired
     private HwMarkMapper hwMarkMapper;
+
+    @Resource
+    private TestXmlDao testXmlMapper;
+
+    public List<HeadwatersPo> getAllHeadwatersxml() {
+        return testXmlMapper.getAAAss();
+    }
 
     public List<HeadwatersPo> getAllHeadwaters() {
         return hwMarkMapper.getAll();

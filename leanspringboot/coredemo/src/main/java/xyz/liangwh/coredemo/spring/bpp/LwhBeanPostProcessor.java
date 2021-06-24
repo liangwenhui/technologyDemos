@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * BeanPostProcessor bean实例化后调用
+ * 初始化之前、初始化之后
  */
 @Component
 public class LwhBeanPostProcessor implements BeanPostProcessor {

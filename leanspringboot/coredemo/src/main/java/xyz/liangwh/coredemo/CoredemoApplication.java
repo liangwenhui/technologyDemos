@@ -1,17 +1,23 @@
 package xyz.liangwh.coredemo;
 
+import org.springframework.beans.factory.support.BeanDefinitionBuilder;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
 import xyz.liangwh.coredemo.spring.bean.AppBeans;
 import xyz.liangwh.coredemo.spring.contitonal.SpringbootVersionConditional;
+import xyz.liangwh.coredemo.spring.dynamicRegist.BeanA;
 
 @SpringBootApplication
 public class CoredemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CoredemoApplication.class, args);
+        ConfigurableApplicationContext run = SpringApplication.run(CoredemoApplication.class, args);
+
+
     }
 
 
@@ -33,5 +39,6 @@ public class CoredemoApplication {
         b1.setJob("springAdmin");
         return b1;
     }
+
 
 }

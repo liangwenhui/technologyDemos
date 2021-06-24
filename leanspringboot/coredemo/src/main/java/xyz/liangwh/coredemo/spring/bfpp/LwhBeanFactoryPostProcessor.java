@@ -4,12 +4,14 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.MutablePropertyValues;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.support.GenericBeanDefinition;
 import org.springframework.stereotype.Component;
 import xyz.liangwh.coredemo.spring.bean.AppBeans;
+import xyz.liangwh.coredemo.spring.dynamicRegist.BeanA;
 
 import java.util.Map;
 import java.util.Set;
@@ -30,6 +32,9 @@ public class LwhBeanFactoryPostProcessor implements BeanDefinitionRegistryPostPr
         beanDefinition.setBeanClassName("xyz.liangwh.coredemo.spring.bean.AppBeans");
         beanDefinition.setAttribute("ext","${job.name}");
         beanDefinitionRegistry.registerBeanDefinition("newJob",beanDefinition);
+
+        BeanDefinitionBuilder beanDefinitionBuilder = BeanDefinitionBuilder.genericBeanDefinition(BeanA.class);
+        beanDefinitionRegistry.registerBeanDefinition("beanA",beanDefinitionBuilder.getRawBeanDefinition());
     }
 
     @Override

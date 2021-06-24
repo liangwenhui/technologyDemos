@@ -26,7 +26,7 @@ public class WorkerMain {
         RingBuffer<Tick> ringBuffer = disruptor.start();
 
         //生产
-        for(int i=0;i<2;i++){
+        for(int i=0;i<5;i++){
             long sequence = ringBuffer.next();
             try {
                 Tick event = ringBuffer.get(sequence);

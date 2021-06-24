@@ -1,6 +1,7 @@
 package xyz.liangwh.headwaters;
 
-import org.junit.jupiter.api.Test;
+
+import org.junit.Test;
 
 public class Tests {
 

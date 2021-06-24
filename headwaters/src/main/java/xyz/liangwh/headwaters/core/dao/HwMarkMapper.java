@@ -12,7 +12,8 @@ import xyz.liangwh.headwaters.core.model.HeadwatersPo;
 import xyz.liangwh.headwaters.core.model.HwMarkSamplePo;
 
 import java.util.List;
-@Repository
+//@Repository
+@Mapper
 public interface HwMarkMapper  {
 
     @Select("SELECT id, busi_key, inside_id, max_id, step, `desc`, update_time FROM hw_mark")

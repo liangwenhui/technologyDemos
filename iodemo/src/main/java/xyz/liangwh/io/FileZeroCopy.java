@@ -1,5 +1,7 @@
 package xyz.liangwh.io;
 
+import io.netty.bootstrap.ServerBootstrap;
+import io.netty.channel.nio.NioEventLoopGroup;
 import lombok.SneakyThrows;
 
 import java.io.RandomAccessFile;
@@ -22,6 +24,7 @@ public class FileZeroCopy {
         rafchannel.transferTo(0,rafchannel.size(),socketChannel);
         socketChannel.close();
         rafchannel.close();
-
+        ServerBootstrap bootstrap = new ServerBootstrap();
+        bootstrap.group(new NioEventLoopGroup(1),new NioEventLoopGroup(2));
     }
 }

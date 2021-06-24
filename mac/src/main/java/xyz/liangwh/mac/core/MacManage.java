@@ -13,23 +13,34 @@ public class MacManage {
 
 
 
-    //最大值
-    private final static long MAX_VALUE = 1L<<32;
-    private final static int LENGTH = 8;
+
     //OUI 组织唯一标识 MAC前缀
-    private static String[] oui = new String[]{"08","22"};
+    private static String[] oui = new String[]{"18","08","22"};
 
-
+    private final static int LENGTH = 12-oui.length*2;
+    //最大值
+    private final static long MAX_VALUE = 1l<<(LENGTH<<2);
 
     public static void main(String[] args) {
 
+        System.out.println(MAX_VALUE);
+        System.out.println(LENGTH<<2);
+        System.out.println(1<<24);
 
         MacManage m = new MacManage();
-        System.out.println(m.build(4294967295L));
-        System.out.println(m.build(4294967295L,MacModel.UPPER_CASE));
+        System.out.println(m.build(22));
+        System.out.println(m.build(22,MacModel.UPPER_CASE));
 
     }
 
+    /**
+     * 解析mac地址
+     * @param mac 格式 aa-bb-cc-dd-ee-ff
+     * @return
+     */
+    public long decode(String mac){
+        return 0;
+    }
     /**
      * 构建mac地址
      * @param var
@@ -67,7 +78,7 @@ public class MacManage {
         return hex;
     }
 
-    public  String[]  toArr(String s){
+    private   String[]  toArr(String s){
         List l =  new ArrayList(Arrays.asList(oui));
         String[] data = s.split("");
         StringBuffer sb = new StringBuffer();

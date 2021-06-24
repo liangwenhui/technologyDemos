@@ -2,6 +2,9 @@ package xyz.liangwh.coredemo.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.method.HandlerMethod;
@@ -9,9 +12,14 @@ import org.springframework.web.servlet.HandlerMapping;
 import org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping;
 import org.springframework.web.servlet.mvc.method.RequestMappingInfo;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
+import xyz.liangwh.coredemo.spring.LWHConfiguration2;
+import xyz.liangwh.coredemo.spring.aop.dao.ADao;
+import xyz.liangwh.coredemo.spring.aop.dao.impl.ADaoImpl;
 import xyz.liangwh.coredemo.spring.aware.LwhApplicationAware;
 import xyz.liangwh.coredemo.spring.bean.AppBeans;
 import xyz.liangwh.coredemo.spring.bean.ComBean;
+import xyz.liangwh.coredemo.spring.dynamicRegist.BeanB;
+import xyz.liangwh.out.LWHConfiguration3;
 
 import javax.annotation.Resource;
 import java.util.Map;
@@ -20,8 +28,35 @@ import java.util.UUID;
 @RestController
 @RequestMapping("test")
 public class TestController {
+    @Autowired
+    private ADao dao;
+
+    @Autowired
+    BeanB b;
 
 
+
+    @Autowired
+    LWHConfiguration3 lwhConfiguration3;
+
+    @RequestMapping("testB")
+    public String testB(){
+        return b.dos();
+    }
+
+    @RequestMapping("testAop")
+    public String testAop(){
+//        String a = dao.selectA("nb");
+//        return a;
+        return lwhConfiguration3.toString();
+    }
+
+    @RequestMapping("testBool")
+    public boolean testBool(@RequestBody  User user){
+//        String a = dao.selectA("nb");
+//        return a;
+        return user.isAa();
+    }
 
     @RequestMapping("getAdmin")
     public AppBeans getAdmin(){

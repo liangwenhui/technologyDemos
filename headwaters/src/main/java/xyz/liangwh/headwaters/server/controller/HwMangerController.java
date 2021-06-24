@@ -17,8 +17,7 @@ public class HwMangerController {
     @RequestMapping("test")
     @Transactional()
     public Object test(){
-        return hwMarkDao.getAllHeadwaters();
+        return hwMarkDao.getAllHeadwatersxml();
     }
-
 
 }
