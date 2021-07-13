@@ -1,7 +1,11 @@
 
 server:
   port: 9001
-
+  ssl:
+    key-store: classpath:oss.p12
+    key-store-password: qazxsw
+    key-store-type: PKCS12
+    #key-alias: oss
 #######################EUREKA#########################################################
 eureka:
   client:
@@ -9,7 +13,7 @@ eureka:
       defaultZone: http://localhost:8001/eureka/
     #间隔到eureka拉去服务列表，默认30s，如果想要快速获取服务，建议设置少一些
     registry-fetch-interval-seconds: 10
-  #  enabled: false
+    enabled: false
 
   instance:
     prefer-ip-address: true
@@ -82,5 +86,7 @@ ribbon:
 
 
 ######################################################################################
+
+###ssl
 
 
