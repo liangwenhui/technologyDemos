@@ -16,7 +16,16 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import xyz.liangwh.eureka.mbean.UserMbean;
 
+import javax.management.MBeanServer;
+import javax.management.MalformedObjectNameException;
+import javax.management.ObjectName;
+import javax.management.remote.JMXConnectorServer;
+import javax.management.remote.JMXConnectorServerFactory;
+import javax.management.remote.JMXServiceURL;
+import java.lang.management.ManagementFactory;
+import java.rmi.registry.LocateRegistry;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,8 +33,10 @@ import java.util.List;
 @EnableEurekaServer
 public class EurekaApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(EurekaApplication.class, args);
+    public static void main(String[] args) throws Exception {
+        SpringApplication.run(EurekaApplication.class, args
+
+        );
     }
 
 
