@@ -1,6 +1,7 @@
 package xyz.liangwh.io.socket;
 
 import lombok.SneakyThrows;
+import org.junit.Test;
 
 import java.net.InetSocketAddress;
 import java.nio.Buffer;
@@ -40,11 +41,12 @@ public class SocketMultiplexing {
     }
 
     @SneakyThrows
+    @Test
     public void start(){
         initServer();
         while (true){
             Set<SelectionKey> keys = selector.keys();
-            System.out.println(keys.size());
+            //System.out.println(keys.size());
 
             while (selector.select(500)>0){
                 Set<SelectionKey> selectionKeys = selector.selectedKeys();
@@ -52,6 +54,7 @@ public class SocketMultiplexing {
                 while (iterator.hasNext()){
                     SelectionKey next = iterator.next();
                     if(next.isAcceptable()){
+                        System.out.println("accept");
                         acceptHandle(next);
                     }
                     if(next.isReadable()){
